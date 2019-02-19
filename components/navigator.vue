@@ -1,9 +1,10 @@
 <template>
 	<!--自定义导航栏-->
 	<view class="cu-custom" :style="{height: globalData.CustomBar + 'px'}">
-		<view class="cu-bar fixed bg-gradual-blue" :style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		<view class="cu-bar fixed bg-gradual-blue" :style="{height: globalData.CustomBar + 'px', paddingTop: globalData.StatusBar + 'px'}">
 			<navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
-				<text class='icon-back'></text> {{titleText}}
+				<text class='icon-back'></text>
+				<text>{{titleText}}</text>
 			</navigator>
 		</view>
 	</view>
@@ -38,14 +39,14 @@
 
 		},
 		methods: {
-			goBack() {
-				uni.navigateBack();
-			}
+			
 		},
 		components: {}
 	}
 </script>
 
-<style lang='scss'>
-
+<style scoped lang='scss'>
+	.icon-back{
+		margin-top:0.2em;
+	}
 </style>
