@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "pages/index/detail"
+		},
+		{
+			"path": "pages/life/index"
 		}
 	],
 	"globalStyle": {
@@ -25,10 +28,10 @@
 			"selectedIconPath": "static/tabbar/basics_cur.png",
 			"text": "足迹"
 		}, {
-			"pagePath": "pages/index/index",
+			"pagePath": "pages/life/index",
 			"iconPath": "static/tabbar/component.png",
 			"selectedIconPath": "static/tabbar/component_cur.png",
-			"text": "生活"
+			"text": "趣事"
 		}, {
 			"pagePath": "pages/index/index",
 			"iconPath": "static/tabbar/about.png",

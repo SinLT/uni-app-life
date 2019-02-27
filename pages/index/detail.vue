@@ -3,7 +3,7 @@
 		<navigator-top :titleText="title"></navigator-top>
 		<view class='detail-list'>
 			<view class="detail-item" v-for="(item, index) in data" :key="index">
-				<image :src="item.image" mode="widthFix" />
+				<image :src="item.image" mode="widthFix" @click="previewImage(item.image)" />
 			</view>
 		</view>
 	</view>
@@ -19,19 +19,19 @@
 			return {
 				title: '',
 				data: [{
-					image: 'https://i.pinimg.com/564x/cc/6c/8f/cc6c8f930f80f01dd5b3e024878d1bb0.jpg?b=t'
+					image: 'http://pic8.nipic.com/20100717/4778793_140909004754_2.jpg'
 				}, {
-					image: 'https://cdn.pixabay.com/photo/2014/11/13/23/34/london-530055_960_720.jpg'
+					image: 'http://www.haopic.me/wp-content/uploads/2014/01/20140123202940934.jpg'
 				}, {
-					image: 'https://cdn.pixabay.com/photo/2015/07/13/14/40/paris-843229_960_720.jpg'
+					image: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_50/2248_5469795_643737.jpg'
 				}, {
-					image: 'https://cdn.pixabay.com/photo/2010/11/26/canyon-203_960_720.jpg'
+					image: 'http://img5.ph.126.net/Kzpq_si_nRaAplBLswnXxQ==/2843741689724833235.jpg'
 				}, {
-					image: 'https://cdn.pixabay.com/photo/2016/03/09/15/23/grand-canal-1246629_960_720.jpg'
+					image: 'http://pic31.nipic.com/20130703/5019917_104624240136_2.jpg'
 				}, {
-					image: 'https://cdn.pixabay.com/photo/2012/07/03/22/55/rio-de-janeiro-51320_960_720.jpg'
+					image: 'http://www.qqkw.net/uploads/allimg/130628/1_130628111423_4.jpg'
 				}, {
-					image: 'https://cdn.pixabay.com/photo/2018/10/08/17/38/nature-3733115_960_720.jpg'
+					image: 'http://www.qqkw.net/uploads/allimg/130628/1_130628111423_5.jpg'
 				}]
 			}
 		},
@@ -39,7 +39,13 @@
 			this.title = option.title
 		},
 		methods: {
-
+			previewImage(item) {
+				let data = []
+				data.push(item)
+				uni.previewImage({
+					urls: data
+				})
+			}
 		}
 	}
 </script>
