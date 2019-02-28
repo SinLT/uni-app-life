@@ -1,6 +1,7 @@
 import uniRequest from 'uni-request'
+import { dateUtils } from '../util'
 
-uniRequest.defaults.baseURL = 'http://localhost:1337'
+uniRequest.defaults.baseURL = dateUtils.apiUrl
 
 uniRequest.interceptors.request.use((request) => {
 	return request

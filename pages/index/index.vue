@@ -41,8 +41,7 @@ export default {
 		])
 	},
 	onLoad() {
-		this.getData()
-		this.shici()
+		
 	},
 	methods: {
 		...mapActions([
@@ -56,6 +55,10 @@ export default {
 		async getData() {
 			await this.getFootprints()
 		}
+	},
+	mounted() {
+		this.getData()
+		this.shici()
 	}
 };
 </script>

@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "pages/life/index"
+		},
+		{
+			"path": "pages/life/detail"
+		},
+		{
+			"path": "pages/home/index"
 		}
 	],
 	"globalStyle": {
@@ -33,7 +39,7 @@
 			"selectedIconPath": "static/tabbar/component_cur.png",
 			"text": "趣事"
 		}, {
-			"pagePath": "pages/index/index",
+			"pagePath": "pages/home/index",
 			"iconPath": "static/tabbar/about.png",
 			"selectedIconPath": "static/tabbar/about_cur.png",
 			"text": "我的"

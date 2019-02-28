@@ -12,12 +12,18 @@ export default new Vuex.Store({
 		},
 		FootPrints: {
 			ListData: []
+		},
+		Interestings: {
+			ListData: []
 		}
 	},
 	mutations: {
 		FootprintsData(state, data) {
 			state.FootPrints.ListData = data
 		},
+		InterestingsData(state, data) {
+			state.Interestings.ListData = data
+		}
 	},
 	actions: {
 		async getFootprints({
@@ -27,5 +33,12 @@ export default new Vuex.Store({
 			const data = await api.getFootprints()
 			commit('FootprintsData', data)
 		},
+		async getInterestings({
+			state,
+			commit
+		}) {
+			const data = await api.getInterestings()
+			commit('InterestingsData', data)
+		}
 	}
 })
