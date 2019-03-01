@@ -2,7 +2,7 @@
 	<view>
 		<view class="index">
 			<image
-				src="../../static/background.png"
+				src="https://api.taolihuixin.cn/uploads/488f119708ad4fc1aec9a14770afe6b7.webp"
 				mode="widthFix"
 				class="png"
 				style="width:100%;height:486rpx"

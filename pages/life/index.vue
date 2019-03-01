@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<image
-			src="../../static/LifeBg.jpg"
+			src="https://api.taolihuixin.cn/uploads/e07a04f14b4445058f1076c3b2f8dad6.webp"
 			mode="widthFix"
 			class="png"
 			style="width:100%;height:486rpx"

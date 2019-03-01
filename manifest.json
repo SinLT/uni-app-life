@@ -55,6 +55,7 @@
         "appid" : "wx48b5bfb9724a215b",
         "setting" : {
             "urlCheck" : true
-        }
+        },
+        "permission" : {}
     }
 }
