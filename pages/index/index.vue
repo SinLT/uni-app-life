@@ -2,7 +2,7 @@
 	<view>
 		<view class="index">
 			<image
-				src="https://api.taolihuixin.cn/uploads/488f119708ad4fc1aec9a14770afe6b7.webp"
+				:src="BgData"
 				mode="widthFix"
 				class="png"
 				style="width:100%;height:486rpx"
@@ -29,36 +29,34 @@
 <script>
 const jinrishici = require('../../common/jinrishici.js');
 import { mapState, mapActions } from 'vuex';
+import api from '../../common/api';
 export default {
 	data() {
 		return {
-			textData: ''
-		}
+			textData: '',
+			BgData: ''
+		};
 	},
 	computed: {
-		...mapState([
-			'FootPrints'
-		])
+		...mapState(['FootPrints'])
 	},
-	onLoad() {
-		
-	},
+	onLoad() {},
 	methods: {
-		...mapActions([
-			'getFootprints'
-		]),
+		...mapActions(['getFootprints']),
 		shici() {
 			jinrishici.load(result => {
-				this.textData = result.data.content
+				this.textData = result.data.content;
 			});
 		},
 		async getData() {
-			await this.getFootprints()
+			const BgData = await api.getBgimagesDetail(1);
+			this.BgData = this.$apiUrl + BgData.image.url;
+			await this.getFootprints();
 		}
 	},
 	mounted() {
-		this.getData()
-		this.shici()
+		this.getData();
+		this.shici();
 	}
 };
 </script>
