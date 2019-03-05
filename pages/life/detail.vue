@@ -38,7 +38,8 @@ export default {
 		this.title = option.title;
 		const data = await api.getInterestingsDetail(option.id);
 		this.images = data.images;
-		this.content = data.content
+		this.content = data.content;
+		uni.showShareMenu();
 	},
 	methods: {
 		previewImage() {
@@ -67,7 +68,7 @@ export default {
 		width: 100%;
 	}
 }
-.content{
+.content {
 	padding: 40upx;
 	margin: 20upx;
 }

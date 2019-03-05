@@ -4,34 +4,7 @@ export default {
 	computed: {
 		...mapState(['globalData'])
 	},
-	methods: {
-		Login() {
-			uni.getProvider({
-				service: 'oauth',
-				success: function(res) {
-					console.log(res.provider);
-					//支持微信、qq和微博等
-					if (~res.provider.indexOf('weixin')) {
-						uni.login({
-							provider: 'weixin',
-							success: function(loginRes) {
-								console.log('-------获取openid(unionid)-----');
-								console.log(JSON.stringify(loginRes));
-								// 获取用户信息
-								uni.getUserInfo({
-									provider: 'weixin',
-									success: function(infoRes) {
-										console.log('-------获取微信用户所有-----');
-										console.log(JSON.stringify(infoRes.userInfo));
-									}
-								});
-							}
-						});
-					}
-				}
-			});
-		}
-	},
+	methods: {},
 	onLaunch: function() {
 		uni.getSystemInfo({
 			success: e => {
@@ -39,7 +12,7 @@ export default {
 				this.globalData.CustomBar =
 					e.platform == 'android' ? e.statusBarHeight + 50 : e.statusBarHeight + 45;
 			}
-		})
+		});
 	},
 	onShow: function() {},
 	onHide: function() {}

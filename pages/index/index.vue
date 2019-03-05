@@ -57,6 +57,7 @@ export default {
 	mounted() {
 		this.getData();
 		this.shici();
+		uni.showShareMenu();
 	}
 };
 </script>

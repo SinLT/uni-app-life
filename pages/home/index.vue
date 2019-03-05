@@ -2,6 +2,7 @@
 	<view v-if="BgData">
 		<view class="UCenter-bg" :style="{ backgroundImage: 'url(' + BgData + ')' }">
 			<view class="text-center">
+				<button open-type="getUserInfo" lang="zh_CN" @getuserinfo="onGotUserInfo">登陆</button>
 				<image :src="avatar" class="png" mode="widthFix"></image>
 				<view class="text-xl margin-top-xl">{{ name }}</view>
 			</view>
@@ -36,6 +37,7 @@ export default {
 	},
 	async onLoad(option) {
 		this.getData();
+		uni.showShareMenu();
 	},
 	methods: {
 		CopyLink(e) {
@@ -52,6 +54,9 @@ export default {
 		async getData() {
 			const BgData = await api.getBgimagesDetail(3);
 			this.BgData = this.$apiUrl + BgData.image.url;
+		},
+		onGotUserInfo(e) {
+			console.log(e)
 		}
 	}
 };

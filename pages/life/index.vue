@@ -55,6 +55,7 @@ export default {
 	},
 	mounted() {
 		this.getData();
+		uni.showShareMenu();
 	}
 };
 </script>
